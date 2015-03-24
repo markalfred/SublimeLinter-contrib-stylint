@@ -1,6 +1,8 @@
 SublimeLinter-contrib-stylint
 ================================
 
+[![Build Status](https://travis-ci.org/jackbrewer/SublimeLinter-contrib-stylint.svg?branch=master)](https://travis-ci.org/jackbrewer/SublimeLinter-contrib-stylint)
+
 This linter plugin for [SublimeLinter][docs] provides an interface to [stylint](https://github.com/rossPatton/stylint). It will be used with files that have the “stylus” syntax.
 
 ## Installation
