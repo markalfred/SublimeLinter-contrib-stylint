@@ -20,7 +20,7 @@ class Stylint(NodeLinter):
     syntax = 'stylus'
     cmd = 'stylint @ *'
     executable = 'stylint'
-    version_requirement = '>= 0.9'
+    version_requirement = '>= 0.9.3'
     regex = r'''(?xi)
         # Comments show example output for each line of a Stylint warning
         # 'Near' can contain trailing whitespace, which we avoid capturing
