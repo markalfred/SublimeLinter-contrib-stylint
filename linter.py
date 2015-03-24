@@ -26,9 +26,9 @@ class Stylint(NodeLinter):
         # 'Near' can contain trailing whitespace, which we avoid capturing
 
         # Warning:  commas must be followed by a space for readability
-        ^((?P<warning>warning)|(?P<error>Error)):\s*(?P<message>.+)$\r?\n
+        ^((?P<warning>warning)|(?P<error>Error)):\s*(?P<message>.+)$\s*
         # File: /path/to/file/example.styl
-        ^.*$\r?\n
+        ^.*$\s*
         # Line: 46: color rgba(0,0,0,.5)
         ^Line:\s*(?P<line>\d+):\s*(?P<near>.*\S)
     '''
