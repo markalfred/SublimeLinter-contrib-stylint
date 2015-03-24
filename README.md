@@ -40,6 +40,12 @@ To install via Package Control, do the following:
 ## Settings
 For general information on how SublimeLinter works with settings, please see [Settings][settings]. For information on generic linter settings, please see [Linter Settings][linter-settings].
 
+You can configure stylint options in the way you would from the command line, with `.stylintrc` files. For more information, see the stylint docs. The linter plugin does this by searching for a `.stylintrc` file in your stylus file’s current directory tree. If you are an OSX / Linux user, you can also set a global `.stylintrc` in your User (`~`) directory.
+
+You may provide a custom config file by setting the linter’s `"args"` setting to `["--config", "/path/to/file"]`. On Windows, be sure to double the backslashes in the path, for example `["--config", "C:\\Users\\Name\\stylint.conf"]`.
+
+The path to the `.stylintrc` file is cached, meaning if you create a new .stylintrc that should have precedence over the previous one (meaning it is closer to the .styl file) you need to clear the cache for the linter to use the new `.stylintrc` You can clear the cache by going to: Tools > SublimeLinter > Clear Caches.
+
 ## Contributing
 If you would like to contribute enhancements or fixes, please do the following:
 
