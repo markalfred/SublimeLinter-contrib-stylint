@@ -17,6 +17,7 @@ class Stylint(NodeLinter):
 
     """Provides an interface to stylint."""
 
+    npm_name = 'stylint'
     syntax = 'stylus'
     cmd = 'stylint @ *'
     executable = 'stylint'
