@@ -13,7 +13,6 @@ from SublimeLinter.lint import NodeLinter, util
 
 
 class Stylint(NodeLinter):
-
     """Provides an interface to stylint."""
 
     npm_name = 'stylint'
@@ -26,7 +25,7 @@ class Stylint(NodeLinter):
         # /path/to/file/example.styl
         ^.*$\s*
         # 177:24 colors warning hexidecimal color should be a variable
-        (?P<line>\d+):(?P<near>\d+)\s*\w+\s*((?P<warning>warning)|(?P<error>error))\s*(?P<message>.+)$\s*
+        ^(?P<line>\d+):(?P<near>\d+)\s*\w+\s*((?P<warning>warning)|(?P<error>error))\s*(?P<message>.+)$\s*
     '''
     multiline = True
     error_stream = util.STREAM_STDOUT
