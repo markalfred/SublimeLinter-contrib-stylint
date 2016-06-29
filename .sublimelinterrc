@@ -4,8 +4,8 @@
         "flake8": {
             "max-line-length": 120
         },
-        "pep257": {
-            "ignore": ["D202"]
+        "pydocstyle": {
+            "add-ignore": ["D202,D211"]
         },
         "pep8": {
             "max-line-length": 120
