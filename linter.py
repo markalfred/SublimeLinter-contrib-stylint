@@ -20,7 +20,7 @@ class Stylint(NodeLinter):
     syntax = 'stylus'
     cmd = 'stylint @ *'
     executable = 'stylint'
-    version_requirement = '>= 1.5.0, < 1.6.0'
+    version_requirement = '>= 1.5.0'
     regex = r'''(?xi)
         # Comments show example output for each line of a Stylint warning
         # /path/to/file/example.styl
