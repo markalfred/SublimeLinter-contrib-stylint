@@ -6,7 +6,6 @@
 # Copyright (c) 2015 Jack Brewer
 #
 # License: MIT
-#
 
 """This module exports the Stylint plugin class."""
 
@@ -21,17 +20,13 @@ class Stylint(NodeLinter):
     syntax = 'stylus'
     cmd = 'stylint @ *'
     executable = 'stylint'
-    version_requirement = '>= 0.9.3'
+    version_requirement = '>= 1.5.0'
     regex = r'''(?xi)
         # Comments show example output for each line of a Stylint warning
-        # 'Near' can contain trailing whitespace, which we avoid capturing
-
-        # Warning:  commas must be followed by a space for readability
-        ^((?P<warning>warning)|(?P<error>Error)):\s*(?P<message>.+)$\s*
-        # File: /path/to/file/example.styl
+        # /path/to/file/example.styl
         ^.*$\s*
-        # Line: 46: color rgba(0,0,0,.5)
-        ^Line:\s*(?P<line>\d+):\s*(?P<near>.*\S)
+        # 177:24 colors warning hexidecimal color should be a variable
+        ^(?P<line>\d+):(?P<near>\d+)\s*\w+\s*((?P<warning>warning)|(?P<error>error))\s*(?P<message>.+)$\s*
     '''
     multiline = True
     error_stream = util.STREAM_STDOUT
