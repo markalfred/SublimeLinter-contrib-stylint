@@ -17,7 +17,8 @@ class Stylint(NodeLinter):
     """Provides an interface to stylint."""
 
     npm_name = 'stylint'
-    syntax = 'stylus'
+    syntax = ('stylus', 'vue')
+    selectors = {'vue': 'source.stylus.embedded.html'}
     cmd = 'stylint @ *'
     executable = 'stylint'
     version_requirement = '>= 1.5.0'
