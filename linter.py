@@ -7,7 +7,7 @@
 #
 # License: MIT
 
-"""This module exports the Stylint plugin class."""
+"""Exports the Stylint plugin class."""
 
 from SublimeLinter.lint import NodeLinter, util
 
