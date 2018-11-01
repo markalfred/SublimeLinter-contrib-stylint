@@ -7,7 +7,7 @@
 #
 # License: MIT
 
-"""This module exports the Stylint plugin class."""
+"""Exports the Stylint plugin class."""
 
 from SublimeLinter.lint import NodeLinter, util
 
@@ -17,7 +17,8 @@ class Stylint(NodeLinter):
     """Provides an interface to stylint."""
 
     npm_name = 'stylint'
-    syntax = 'stylus'
+    syntax = ('stylus', 'vue')
+    selectors = {'vue': 'source.stylus.embedded.html'}
     cmd = 'stylint @ *'
     executable = 'stylint'
     version_requirement = '>= 1.5.0'
@@ -26,7 +27,7 @@ class Stylint(NodeLinter):
         # /path/to/file/example.styl
         ^.*$\s*
         # 177:24 colors warning hexidecimal color should be a variable
-        ^(?P<line>\d+):?(?P<near>\d+)?\s*\w+\s*((?P<warning>warning)|(?P<error>error))\s*(?P<message>.+)$\s*
+        ^(?P<line>\d+):?(?P<col>\d+)?\s*((?P<warning>warning)|(?P<error>error))\s*(?P<message>.+)$\s*
     '''
     multiline = True
     error_stream = util.STREAM_STDOUT
