@@ -2,7 +2,7 @@ import unittest
 import re
 
 regex = r'''(?xim)
-    ^.*$\s*
+    (^.*$\s*)*
     ^(?P<line>\d+):?(?P<col>\d+)?\s*(?P<rule>\w+)?\s*((?P<warning>warning)|(?P<error>error))\s*(?P<message>.+)$\s*
 '''
 
@@ -14,7 +14,7 @@ class TestRegex(unittest.TestCase):
         self.assertEqual(redict, dict)
 
     def test_output_with_rule_prepended(self):
-        str = '\n177:24  colors  warning  hexidecimal color should be a variable'
+        str = '177:24  colors  warning  hexidecimal color should be a variable'
         dict = {
             'line': '177',
             'col': '24',
@@ -26,7 +26,7 @@ class TestRegex(unittest.TestCase):
         self.match_regex_dict(str, dict)
 
     def test_output_with_rule_appended(self):
-        str = '\n177:24  warning  hexidecimal color should be a variable  colors'
+        str = '177:24  warning  hexidecimal color should be a variable  colors'
         dict = {
             'line': '177',
             'col': '24',
@@ -38,7 +38,7 @@ class TestRegex(unittest.TestCase):
         self.match_regex_dict(str, dict)
 
     def test_output_with_no_col(self):
-        str = '\n177  warning  hexidecimal color should be a variable'
+        str = '177  warning  hexidecimal color should be a variable'
         dict = {
             'line': '177',
             'col': None,

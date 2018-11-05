@@ -30,7 +30,7 @@ class Stylint(NodeLinter):
     regex = r'''(?xi)
         # Comments show example output for each line of a Stylint warning
         # /path/to/file/example.styl
-        ^.*$\s*
+        (^.*$\s*)*
         # 177:24  colors  warning  hexidecimal color should be a variable
         # 177:24  warning  hexidecimal color should be a variable  colors
         # 177  warning  hexidecimal color should be a variable  colors
