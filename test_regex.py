@@ -61,6 +61,18 @@ class TestRegex(unittest.TestCase):
         }
         self.match_regex_dict(str, dict)
 
+    def test_multiline_output(self):
+        str = '/path/to/file/example.styl\n\n31:10 colons error missing colon between property and value'
+        dict = {
+            'line': '31',
+            'col': '10',
+            'rule': 'colons',
+            'warning': None,
+            'error': 'error',
+            'message': 'missing colon between property and value'
+        }
+        self.match_regex_dict(str, dict)
+
 
 if __name__ == '__main__':
     unittest.main()
