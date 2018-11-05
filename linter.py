@@ -26,8 +26,10 @@ class Stylint(NodeLinter):
         # Comments show example output for each line of a Stylint warning
         # /path/to/file/example.styl
         ^.*$\s*
-        # 177:24 colors warning hexidecimal color should be a variable
-        ^(?P<line>\d+):?(?P<col>\d+)?\s*((?P<warning>warning)|(?P<error>error))\s*(?P<message>.+)$\s*
+        # 177:24  colors  warning  hexidecimal color should be a variable
+        # 177:24  warning  hexidecimal color should be a variable  colors
+        # 177  warning  hexidecimal color should be a variable  colors
+        ^(?P<line>\d+):?(?P<col>\d+)?\s*(?P<rule>\w+)?\s*((?P<warning>warning)|(?P<error>error))\s*(?P<message>.+)$\s*
     '''
     multiline = True
     error_stream = util.STREAM_STDOUT
