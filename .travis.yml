@@ -9,3 +9,4 @@ install:
 script:
   - flake8 . --max-line-length=120
   - pydocstyle . --ignore=D202,D211
+  - python -m unittest discover
