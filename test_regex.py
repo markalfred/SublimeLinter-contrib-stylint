@@ -1,9 +1,21 @@
 import unittest
 import re
 
-regex = r'''(?xim)
+regex = r'''
+    (?xim)
     (^.*$\s*)*
-    ^(?P<line>\d+):?(?P<col>\d+)?\s*(?P<rule>\w+)?\s*((?P<warning>warning)|(?P<error>error))\s*(?P<message>.+)$\s*
+
+    ^
+    (?P<line>\d+)
+    :?
+    (?P<col>\d+)?
+    \s*
+    (?P<rule>\w+)?
+    \s*
+    ((?P<warning>warning)|(?P<error>error))
+    \s*
+    (?P<message>.+)
+    $\s*
 '''
 
 
