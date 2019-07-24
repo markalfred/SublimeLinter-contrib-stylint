@@ -17,11 +17,16 @@ class Stylint(NodeLinter):
     """Provides an interface to stylint."""
 
     npm_name = 'stylint'
-    syntax = ('stylus', 'vue')
     selectors = {'vue': 'source.stylus.embedded.html'}
     cmd = 'stylint @ *'
     executable = 'stylint'
     version_requirement = '>= 1.5.0'
+    defaults = {
+        'selector': 'source.stylus, text.html.vue',
+        '--ignore=,': '',
+        '--warn=,': '',
+        '--error=,': ''
+    }
     regex = r'''(?xi)
         # Comments show example output for each line of a Stylint warning
         # /path/to/file/example.styl
