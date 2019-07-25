@@ -1,24 +1,6 @@
 import unittest
 import re
-
-regex = r'''
-    (?xim)
-    (^.*$\s*)*
-
-    ^
-    ((?P<filename>\S+)\s+)?
-    (?P<line>\d+)
-    :?
-    (?P<col>\d+)?
-    \s*
-    (?P<rule>\w+)?
-    \s*
-    ((?P<warning>warning)|(?P<error>error))
-    \s*
-    (?P<message>.+)
-    $\s*
-'''
-
+from regex import regex
 
 class TestRegex(unittest.TestCase):
 
