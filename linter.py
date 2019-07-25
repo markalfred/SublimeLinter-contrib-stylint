@@ -14,7 +14,6 @@ from regex import regex
 
 
 class Stylint(NodeLinter):
-
     """Provides an interface to stylint."""
 
     npm_name = 'stylint'

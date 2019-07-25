@@ -2,6 +2,7 @@ import unittest
 import re
 from regex import regex
 
+
 class TestRegex(unittest.TestCase):
 
     def match_regex_dict(self, str, dict):
@@ -48,7 +49,8 @@ class TestRegex(unittest.TestCase):
         self.match_regex_dict(str, dict)
 
     def test_multiline_output(self):
-        str = '/path/to/file/example.styl\n\n31:10 colons error missing colon between property and value'
+        str = '/path/to/file/example.styl\n\n' \
+            '31:10 colons error missing colon between property and value'
         dict = {
             'filename': None,
             'line': '31',
@@ -61,7 +63,8 @@ class TestRegex(unittest.TestCase):
         self.match_regex_dict(str, dict)
 
     def test_prepended_filename(self):
-        str = '/path/to/file/example.styl 31:10 colons error missing colon between property and value'
+        str = '/path/to/file/example.styl ' \
+            '31:10 colons error missing colon between property and value'
         dict = {
             'filename': '/path/to/file/example.styl',
             'line': '31',
