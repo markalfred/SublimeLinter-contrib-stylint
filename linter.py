@@ -18,7 +18,7 @@ class Stylint(NodeLinter):
 
     cmd = 'stylint @ *'
     defaults = {
-        'selector': 'source.stylus, text.html.vue, source.stylus.embedded.html',
+        'selector': 'source.stylus, source.stylus.embedded.html',
         '--ignore=,': '',
         '--warn=,': '',
         '--error=,': ''
