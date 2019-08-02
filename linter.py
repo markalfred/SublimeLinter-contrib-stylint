@@ -16,12 +16,9 @@ from regex import regex
 class Stylint(NodeLinter):
     """Provides an interface to stylint."""
 
-    npm_name = 'stylint'
     cmd = 'stylint @ *'
-    executable = 'stylint'
-    version_requirement = '>= 1.5.0'
     defaults = {
-        'selector': 'source.stylus, text.html.vue',
+        'selector': 'source.stylus, source.stylus.embedded.html',
         '--ignore=,': '',
         '--warn=,': '',
         '--error=,': ''
