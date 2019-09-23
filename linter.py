@@ -10,10 +10,10 @@
 """Exports the Stylint plugin class."""
 
 from SublimeLinter.lint import NodeLinter, util
+from regex import regex
 
 
 class Stylint(NodeLinter):
-
     """Provides an interface to stylint."""
 
     cmd = 'stylint @ *'
@@ -23,15 +23,7 @@ class Stylint(NodeLinter):
         '--warn=,': '',
         '--error=,': ''
     }
-    regex = r'''(?xi)
-        # Comments show example output for each line of a Stylint warning
-        # /path/to/file/example.styl
-        ^.*$\s*
-        # 177:24  colors  warning  hexidecimal color should be a variable
-        # 177:24  warning  hexidecimal color should be a variable  colors
-        # 177  warning  hexidecimal color should be a variable  colors
-        ^(?P<line>\d+):?(?P<col>\d+)?\s*(?P<rule>\w+)?\s*((?P<warning>warning)|(?P<error>error))\s*(?P<message>.+)$\s*
-    '''
+    regex = regex
     multiline = True
     error_stream = util.STREAM_STDOUT
     tempfile_suffix = 'styl'
