@@ -16,7 +16,7 @@ from regex import regex
 class Stylint(NodeLinter):
     """Provides an interface to stylint."""
 
-    cmd = 'stylint @ *'
+    cmd = 'stylint ${temp_file} ${args}'
     defaults = {
         'selector': 'source.stylus, source.stylus.embedded.html',
         '--ignore=,': '',
@@ -27,4 +27,3 @@ class Stylint(NodeLinter):
     multiline = True
     error_stream = util.STREAM_STDOUT
     tempfile_suffix = 'styl'
-    config_file = ('--config', '.stylintrc', '~')
